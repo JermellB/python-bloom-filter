@@ -3,17 +3,6 @@
 # superfluous-parens: Sometimes extra parens are more clear
 
 """Bloom Filter: Probabilistic set membership testing for large sets"""
-
-# Shamelessly borrowed (under MIT license) from http://code.activestate.com/recipes/577686-bloom-filter/
-# About Bloom Filters: http://en.wikipedia.org/wiki/Bloom_filter
-
-# Tweaked by Daniel Richard Stromberg, mostly to:
-# 1) Give it a little nicer __init__ parameters.
-# 2) Improve the hash functions to get a much lower rate of false positives.
-# 3) Give it a selection of backends.
-# 4) Make it pass pylint.
-
-from __future__ import division
 import os
 #mport sys
 import math
