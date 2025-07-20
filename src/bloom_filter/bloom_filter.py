@@ -18,7 +18,7 @@ import os
 #mport sys
 import math
 import array
-import random
+import secrets
 
 try:
     import mmap as mmap_mod
@@ -437,7 +437,7 @@ def get_bitno_seed_rnd(bloom_filter, key):
     """Apply num_probes_k hash functions to key.  Generate the array index and bitmask corresponding to each result"""
 
     # We're using key as a seed to a pseudorandom number generator
-    hasher = random.Random(key).randrange
+    hasher = secrets.SystemRandom().Random(key).randrange
     for dummy in range(bloom_filter.num_probes_k):
         bitno = hasher(bloom_filter.num_bits_m)
         yield bitno % bloom_filter.num_bits_m
